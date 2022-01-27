@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +20,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/home', [HomeController::class,'index'])->name('home');
 // Route::resource('libros', LibroController::class)->middleware('auth');
 // Route::resource('categorias', CategoriaController::class)->middleware('auth');
 Route::middleware('auth')
@@ -29,4 +31,4 @@ Route::middleware('auth')
     ]);
 });
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+

@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <div class="col-sm-12">
                 <div class="card">
@@ -37,9 +37,6 @@
 										<th>Categoria</th>
 										<th>Titulo</th>
                                         <th>Autor</th>
-                                        <th>Nº de paginas</th>
-                                        <th>Lugar de publicacion</th>
-                                        <th>Fecha de publicacion</th>
                                         <th>Accion</th>
                                     </tr>
                                 </thead>
@@ -52,9 +49,6 @@
                                             </td>
 											<td>{{ $libro->titulo }}</td>
                                             <td>{{ $libro->nombre_autor }}</td>
-                                            <td>{{ $libro->numero_paginas }}</td>
-                                            <td>{{ $libro->lugar_publicacion }}</td>
-                                            <td>{{ $libro->fecha_publicacion }}</td>
                                             <td>
                                                 <div class="btn-group">
                                                 <a class="btn btn-sm btn-primary mr-1 " href="{{ route('libros.show',$libro->id) }}"><i class="fa fa-fw fa-eye"></i>Ver</a>

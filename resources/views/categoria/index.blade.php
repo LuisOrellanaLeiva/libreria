@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <div class="col-sm-12">
                 <div class="card">
@@ -16,11 +16,17 @@
                                 {{ __('Categoria') }}
                             </span>
 
-                             <div class="float-right">
-                                <a href="{{ route('categorias.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                            <!-- INICIO DIV MODAL-->
+                            <div class="float-right">
+                                {{-- <a href="{{ route('categorias.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Agregar Categoria') }}
-                                </a>
-                              </div>
+                                </a> --}}
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                    Crear Categoria
+                                </button> 
+
+                            </div>
                         </div>
                     </div>
                     @if ($message = Session::get('success'))
@@ -43,16 +49,19 @@
                                 <tbody>
                                     @foreach ($categorias as $categoria)
                                         <tr>
-                                            <td>{{ ++$i }}</td>
+                                            <td>{{ $categoria->id }}</td>
 											<td>{{ $categoria->nombre }}</td>
                                             <td>
+                                                <div class="btn-group">
+                                                <a class="btn btn-sm btn-primary mr-2 " href="{{ route('categorias.show',$categoria->id) }}"><i class="fa fa-fw fa-eye"></i>Ver</a>
+                                                <a class="btn btn-sm btn-success mr-2" href="{{ route('categorias.edit',$categoria->id) }}"><i class="fa fa-fw fa-edit"></i>Editar</a>
+                                                {{-- <button data-nombre="{{ $categoria->nombre }}" value="{{ $categoria->id }}" class="btn btn-sm btn-success editCategoria" ><i class="fa fa-fw fa-edit"></i>Editar</button> --}}
                                                 <form action="{{ route('categorias.destroy',$categoria->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('categorias.show',$categoria->id) }}"><i class="fa fa-fw fa-eye"></i>Ver</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('categorias.edit',$categoria->id) }}"><i class="fa fa-fw fa-edit"></i>Editar</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i>Eliminar</button>
                                                 </form>
+                                                </div>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -61,8 +70,24 @@
                         </div>
                     </div>
                 </div>
-                {!! $categorias->links() !!}
             </div>
         </div>
     </div>
+    
+@include('categoria.modals')
+
 @endsection
+
+{{-- <script>
+$(document).ready(function(){
+$(".editCategoria").on("click",function(){
+$("#nombreEdit").val($(this).data('nombre'));
+$("#formEdit").attr('action', `/categorias/update/${$(this).val()}`);
+$("#modalEdit").modal('show');  
+})
+})
+</script> --}}
+    
+
+
+

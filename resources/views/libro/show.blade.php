@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <section class="content container-fluid">
+    <section class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
@@ -21,12 +21,28 @@
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Categoria Id:</strong>
-                            {{ $libro->categoria_id }}
+                            <strong>Categoria:</strong>
+                            {{ $libro->categoria->nombre }}
                         </div>
                         <div class="form-group">
-                            <strong>Nombre:</strong>
+                            <strong>Titulo:</strong>
                             {{ $libro->titulo }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Autor:</strong>
+                            {{ $libro->nombre_autor }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Nº Paginas:</strong>
+                            {{ $libro->numero_paginas }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Pais de Publicacion:</strong>
+                            {{ $libro->lugar_publicacion }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Fecha de Pubblicacion:</strong>
+                            {{ $libro->fecha_publicacion }}
                         </div>
 
                     </div>

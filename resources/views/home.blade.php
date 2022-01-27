@@ -29,17 +29,17 @@
                   <div class="card" >
                       <img src="img/libro.jpg" />
                       <h4 class="mt-2">Categorias</h4>
-                      <p>Descubre las categorias registradas de cada libro</p>
-                      <a href="{{ route('categorias.index') }}">Ver</a>
+                      <p class="m-2">Descubre las categorias registradas de cada libro</p>
+                      <a class="mt-2" href="{{ route('categorias.index') }}">Ver</a>
                   </div>
   
                   <div class="card">
                       <img src="img/categoria.png" />
                       <h4 class="mt-2">Libros</h4>
-                      <p>
+                      <p class="m-2">
                           Descubre la informacion registrada de tus libros preferidos
                       </p>
-                      <a href="{{ route('libros.index') }}">Ver</a>
+                      <a class="mt-2" href="{{ route('libros.index') }}">Ver</a>
                   </div>
         
   

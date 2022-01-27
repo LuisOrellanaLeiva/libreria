@@ -89,10 +89,8 @@ class LibroController extends Controller
      * @param  Libro $libro
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Libro $libro)
+    public function update(StoreLibro $request, Libro $libro)
     {
-        request()->validate(Libro::$rules);
-
         $libro->update($request->all());
 
         return redirect()->route('libros.index')
@@ -104,6 +102,7 @@ class LibroController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      * @throws \Exception
      */
+    
     public function destroy($id)
     {
         $libro = Libro::find($id)->delete();

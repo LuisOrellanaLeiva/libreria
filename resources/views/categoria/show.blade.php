@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <section class="content container-fluid">
+    <section class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
@@ -14,7 +14,7 @@
                             <span class="card-title">Ver Categoria</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('categorias.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('categorias.index') }}"> Volver</a>
                         </div>
                     </div>
 

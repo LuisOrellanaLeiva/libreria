@@ -18,10 +18,9 @@ class CategoriaController extends Controller
      */
     public function index()
     {
-        $categorias = Categoria::paginate();
-
-        return view('categoria.index', compact('categorias'))
-            ->with('i', (request()->input('page', 1) - 1) * $categorias->perPage());
+        $categorias = Categoria::all();
+        return view('categoria.index', compact('categorias'));
+            
     }
 
     /**
