@@ -3,10 +3,10 @@
         <div class="form-row">
           <div class="col-md-4 mb-3">
             <label for="categoria_id">Categoria</label>
-            <select name="categoria_id" class="form-control" id="validationTooltip01" required>
-                <option selected>Seleccione una categoria...</option>
+            <select aria-selected="{{ $libro->categoria_id }}" name="categoria_id" class="form-control" id="validationTooltip01" required>
+                <option value="">Seleccione una categoria...</option>
                 @foreach ($categorias as $id => $nombre)
-                    <option value="{{ $id}}">{{ $nombre }}</option>
+                    <option value="{{ $id}}" {{ $id == $libro->categoria_id ? 'selected' : '' }} >{{ $nombre }}</option>
                 @endforeach
             </select>
                 <div class="valid-tooltip">Ok Valido!</div>

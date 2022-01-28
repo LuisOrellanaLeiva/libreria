@@ -16,12 +16,7 @@
                                 {{ __('Categoria') }}
                             </span>
 
-                            <!-- INICIO DIV MODAL-->
                             <div class="float-right">
-                                {{-- <a href="{{ route('categorias.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Agregar Categoria') }}
-                                </a> --}}
-                                <!-- Button trigger modal -->
                                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                                     Crear Categoria
                                 </button> 

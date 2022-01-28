@@ -44,10 +44,10 @@ class CategoriaController extends Controller
     {
         request()->validate(Categoria::$rules);
 
-        $categoria = Categoria::create($request->only(['nombre']));
+        Categoria::create($request->only(['nombre']));
 
         return redirect()->route('categorias.index')
-            ->with('success', 'Categoria Creada Exitosamente');
+            ->with('success', "Categoria Creada Exitosamente");
     }
 
     /**

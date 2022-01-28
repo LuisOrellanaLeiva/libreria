@@ -33,30 +33,34 @@
         <h5 class="modal-title" id="staticBackdropLabel">Agregar Categoria</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <form action="{{ route('categorias.store') }}" class="needs-validation" novalidate method="POST">
+        <form action="{{ route('categorias.store') }}" class="needs-validation"  method="POST">
             @csrf
         <div class="modal-body">
             <div class="container">
                 <div class="form-row">
-                
                 <label for="nombre">Nombre Categoria</label>
                 <input type="text" class="form-control" name="nombre" id="nombre" required>
+                @error('nombre')
+                <small class="text-danger">{{ $message }}</small>
+                <br>
+                @enderror 
                 <div class="valid-tooltip">
                     Correcto!
                   </div>
-                  <div class="invalid-tooltip">
+                <div class="invalid-tooltip">
                     Error.
-                  </div>
-                
                 </div>
-                {{-- <button class="btn btn-primary" type="submit">Agregar</button> --}}
+                </div>
             </div>
-        </div>
-        <div class="modal-footer">
+            <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button class="btn btn-primary" type="submit">Agregar</button>
-        </div>
+            <button type="submit" class="btn btn-primary"">Agregar</button>
+            </div>
+
        </form> 
+        </div>
+        
+           
     </div>
     </div>
 </div>
